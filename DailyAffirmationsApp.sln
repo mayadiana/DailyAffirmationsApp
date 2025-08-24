@@ -1,0 +1,23 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.11.35327.3
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{888888A0-9F3D-457C-B088-3A5042F75D52}") = "DailyAffirmationsApp", "DailyAffirmationsApp\DailyAffirmationsApp.pyproj", "{93B178B1-BD20-44DF-83F4-25DE7E1FEBFC}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93B178B1-BD20-44DF-83F4-25DE7E1FEBFC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93B178B1-BD20-44DF-83F4-25DE7E1FEBFC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {080D0B09-2946-4DAD-9507-441389994C93}
+	EndGlobalSection
+EndGlobal

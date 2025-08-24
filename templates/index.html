@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Daily Affirmations</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Your Daily Affirmation</h1>
+        <p class="affirmation">{{ affirmation }}</p>
+        <a href="/" class="button">Get New Affirmation</a>
+    </div>
+</body>
+</html>
