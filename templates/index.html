@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Daily Affirmations</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
 </head>
@@ -8,7 +10,11 @@
     <div class="container">
         <h1>Your Daily Affirmation</h1>
         <p class="affirmation">{{ affirmation }}</p>
-        <a href="/" class="button">Get New Affirmation</a>
+        <form action="/" method="post" class="feeling-form">
+            <input type="text" name="feeling" placeholder="Describe how you're feeling..." required>
+            <button type="submit" class="button">Personalize</button>
+        </form>
+        <a href="/" class="button random-button">Get New Affirmation</a>
     </div>
 </body>
 </html>

@@ -7,6 +7,8 @@ body
     justify-content: center;
     align-items: center;
     margin: 0;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 .container 
@@ -16,7 +18,8 @@ body
     border-radius: 20px;
     text-align: center;
     box-shadow: 0px 4px 15px rgba(0,0,0,0.2);
-    width: 400px;
+    width: 100%;
+    max-width: 500px;
 }
 
 h1 
@@ -29,6 +32,33 @@ h1
     font-size: 20px;
     margin: 20px 0;
     color: #333;
+    min-height: 50px;
+}
+
+.feeling-form
+{
+    margin: 30px 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    align-items: center;
+}
+
+.feeling-form input[type="text"]
+{
+    width: 100%;
+    padding: 12px;
+    border: 2px solid #ddd;
+    border-radius: 10px;
+    font-size: 16px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+.feeling-form input[type="text"]:focus
+{
+   outline: none;
+   border-color: #a6c1ee;
 }
 
 .button 
@@ -36,13 +66,28 @@ h1
     display: inline-block;
     background: #6a0572;
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border-radius: 10px;
     text-decoration: none;
     font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+    transition: background-color 0.3s;
 }
 
 .button:hover 
 {
     background: #52045a;
+}
+
+.random-button
+{
+    background-color: #7d7d7d;
+    margin-top: 10px;
+}
+
+.random-button:hover
+{
+    background-color: #636363;
 }
