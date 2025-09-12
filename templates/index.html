@@ -8,13 +8,21 @@
 </head>
 <body>
     <div class="container">
-        <h1>Your Daily Affirmation</h1>
-        <p class="affirmation">{{ affirmation }}</p>
-        <form action="/" method="post" class="feeling-form">
-            <input type="text" name="feeling" placeholder="Describe how you're feeling..." required>
-            <button type="submit" class="button">Personalize</button>
-        </form>
-        <a href="/" class="button random-button">Get New Affirmation</a>
+        <div class="affirmation-section">
+            <h1>Your Affirmation</h1>
+            <p class="affirmation">{{ affirmation }}</p>
+            <a href="/" class="button">Get Random Affirmation</a>
+        </div>
+
+        <hr class="divider">
+
+        <div class="personalize-section">
+            <h2>Personalize Your Affirmation</h2>
+            <form action="/" method="post" class="feeling-form">
+                <input type="text" name="feeling" placeholder="Describe how you're feeling..." required>
+                <button type="submit" class="button personalize-button">Personalize</button>
+            </form>
+        </div>
     </div>
 </body>
 </html>
