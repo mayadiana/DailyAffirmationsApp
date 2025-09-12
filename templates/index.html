@@ -16,11 +16,29 @@
 
         <hr class="divider">
 
+        <div class="emotion-section">
+            <h2>Choose a Feeling</h2>
+            <form action="/" method="post" class="emotion-form">
+                <div class="select-wrapper">
+                    <select name="emotionChoice" class="emotion-select" required>
+                        <option value="" disabled selected hidden>Choose an emotion...</option>
+                        
+                        {% for emotion in emotions %}
+                            <option value="{{ emotion.name }}">{{ emotion.emoji }} {{ emotion.name }}</option>
+                        {% endfor %}
+                    </select>
+                </div>
+                <button type="submit" class="button">Generate from Choice</button>
+            </form>
+        </div>
+
+        <hr class="divider">
+
         <div class="personalize-section">
             <h2>Personalize Your Affirmation</h2>
             <form action="/" method="post" class="feeling-form">
                 <input type="text" name="feeling" placeholder="Describe how you're feeling..." required>
-                <button type="submit" class="button personalize-button">Personalize</button>
+                <button type="submit" class="button">Personalize</button>
             </form>
         </div>
     </div>

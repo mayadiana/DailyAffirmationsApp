@@ -1,4 +1,3 @@
-from doctest import debug
 from flask import Flask, render_template, request
 import random
 import requests
@@ -6,6 +5,15 @@ import requests
 app = Flask(__name__)
 
 LMStudioURL = "http://192.168.1.112:1234/v1/chat/completions"
+
+EmotionsList = [
+    {"name": "Happy", "emoji": "😊"},
+    {"name": "Sad", "emoji": "😢"},
+    {"name": "Anxious", "emoji": "😟"},
+    {"name": "Grateful", "emoji": "🙏"},
+    {"name": "Tired", "emoji": "😴"},
+    {"name": "Hopeful", "emoji": "✨"}
+]
 
 def loadAffirmations(filename="affirmations.txt"):
     try:
@@ -59,17 +67,20 @@ def generatePersonalizedAffirmation(emotion):
 def home():
     affirmation = ""
     if request.method == "POST":
-        userFeeling = request.form.get("feeling")
-        if userFeeling:
+        if 'feeling' in request.form and request.form['feeling']:
+            userFeeling = request.form.get("feeling")
             affirmation = generatePersonalizedAffirmation(userFeeling)
-        else:
-            affirmations = loadAffirmations()
+        elif 'emotionChoice' in request.form:
+            selectedEmotion = request.form.get("emotionChoice")
+            affirmation = generatePersonalizedAffirmation(selectedEmotion)
+        else: 
+            affirmations = loadAffirmations() 
             affirmation = random.choice(affirmations)
     else: 
-        affirmations = loadAffirmations() 
-        affirmation = random.choice(affirmations)
+            affirmations = loadAffirmations() 
+            affirmation = random.choice(affirmations)
     
-    return render_template("index.html", affirmation=affirmation)
+    return render_template("index.html", affirmation=affirmation, emotions=EmotionsList)
 
 if __name__ == "__main__":
     app.run(debug=True)
