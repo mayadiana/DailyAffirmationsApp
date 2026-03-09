@@ -4,7 +4,7 @@ import requests
 
 app = Flask(__name__)
 
-LMStudioURL = "http://192.168.1.112:1234/v1/chat/completions"
+LMStudioURL = "http://localhost:1234/v1/chat/completions"
 
 EmotionsList = [
     {"name": "Happy", "emoji": "😊"},
