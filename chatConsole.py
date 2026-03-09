@@ -1,13 +1,8 @@
 import os
 import requests
 
-#using an API KEY
-#API_KEY = "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"
-#print("DEBUG API_KEY:", API_KEY)
-#url = "https://openrouter.ai/api/v1/chat/completions"
-
-#using a local server
-url = "http://192.168.1.112:1234/v1/chat/completions"
+# using a local server
+url = "http://localhost:1234/v1/chat/completions"
 
 print("Welcome to the Daily Affirmations Console!\n If you want a different affirmation based on your emotion, type 'another'. Type 'exit' to quit.")
 print("Describe how you're feeling: ")
@@ -54,26 +49,15 @@ while True:
         )
        
         payload = { 
-            #API KEY
-            #"model": "meta-llama/llama-3.3-8b-instruct:free",
-
             #local server
             "model": "google/gemma-3-12b",
             
             "messages": [{"role": "user", "content": prompt}],
             "temperature": 0.9, # Added to encourage variety
-            "top_p": 0.9 #also for variety
+            "top_p": 0.9 # also for variety
         }
 
-        #API KEY
-        #headers = {
-        #    "Authorization": f"Bearer {API_KEY}"
-        #}
-
-        #API KEY
-        #response = requests.post(url, json=payload, headers=headers)
-
-    #local server
+    # local server
     try:
         response = requests.post(url, json=payload)
 
